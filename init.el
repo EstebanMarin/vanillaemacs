@@ -4,3 +4,6 @@
 (scroll-bar-mode -1)
 (set-fringe-mode 10)
 (setq ring-bell-function 'ignore)
+(set-face-attribute 'default nil
+                    :family "Iosevka"
+                    :height 200)
