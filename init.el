@@ -45,3 +45,12 @@
   :ensure t
   :config  
   :init (doom-modeline-mode 1))
+
+
+;; Download Evil
+(unless (package-installed-p 'evil)
+  (package-install 'evil))
+
+;; Enable Evil
+(require 'evil)
+(evil-mode 1)
