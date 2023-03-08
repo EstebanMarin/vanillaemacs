@@ -9,8 +9,6 @@
 (set-face-attribute 'default nil
                     :family "Iosevka"
                     :height 200)
-;; theme
-(load-theme 'solarized-dark)
 
 
 ;; make ESC quit promts
@@ -19,13 +17,7 @@
 ;;initialize package sources
 (require 'package)
 (add-to-list 'package-archives '(("melpa" . "https://melpa.org/packages/")
-				 ("org" .  "https://orgmode.org/elpa")) t)
-
-;; (setq package-archives '(("melpa" . "https://melpa.org/packages/")
-;; 			 ("org" .  "https://orgmode.org/elpa")
-;;			 ("elpa"  . "https://elpa.gnu.org/packages/")))
-
-
+				 ("org" .  "https://orgmode.org/elpa")))
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
@@ -33,6 +25,9 @@
 ;; initialize use-package on non linux platforms
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
+
+;; theme
+(load-theme 'sanityinc-solarized-dark)
 
 (use-package command-log-mode)
 
@@ -68,5 +63,8 @@
 
 ;; magit
 
+(use-package magit
+  :ensure t
+  :bind (("C-x g" . magit-status))
 
 
