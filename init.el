@@ -10,16 +10,22 @@
                     :family "Iosevka"
                     :height 200)
 ;; theme
-(load-theme 'tango-dark)
+(load-theme 'solarized-dark)
+
 
 ;; make ESC quit promts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
 ;;initialize package sources
-(require `package)
-(setq package-archives '(("melpa" . "https://melpa.org/packages/")
-			 ("org" .  "https://orgmode.org/elpa")
-			 ("elpa"  . "https://elpa.gnu.org/packages/")))
+(require 'package)
+(add-to-list 'package-archives '(("melpa" . "https://melpa.org/packages/")
+				 ("org" .  "https://orgmode.org/elpa")) t)
+
+;; (setq package-archives '(("melpa" . "https://melpa.org/packages/")
+;; 			 ("org" .  "https://orgmode.org/elpa")
+;;			 ("elpa"  . "https://elpa.gnu.org/packages/")))
+
+
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
@@ -55,3 +61,12 @@
 ;; Enable Evil
 (require 'evil)
 (evil-mode 1)
+
+;; add numbers of row
+(column-number-mode)
+(global-display-line-numbers-mode t)
+
+;; magit
+
+
+
