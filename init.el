@@ -37,3 +37,11 @@
   :diminish
   :config
   (ivy-mode 1))
+
+;; doom line
+(use-package all-the-icons
+  :ensure t)
+(use-package doom-modeline
+  :ensure t
+  :config  
+  :init (doom-modeline-mode 1))
