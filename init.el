@@ -33,6 +33,7 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
+;;ivy usage
 (use-package ivy
   :diminish
   :config
