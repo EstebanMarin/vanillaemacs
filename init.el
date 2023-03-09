@@ -17,7 +17,8 @@
 ;;initialize package sources
 (require 'package)
 (add-to-list 'package-archives '(("melpa" . "https://melpa.org/packages/")
-				 ("org" .  "https://orgmode.org/elpa")))
+				 ("org" .  "https://orgmode.org/elpa/")
+				 ("elpa" .  "https://elpa.gnu.org/packages/")))
 (package-initialize)
 (unless package-archive-contents
   (package-refresh-contents))
@@ -37,6 +38,10 @@
 ;;ivy usage
 (use-package ivy
   :diminish
+  :bind (:map ivy-minibuffer-map
+	      ("TAB" . ivy-alt-done)
+	      ("C-j" . ivy-next-line)
+	      ("C-k" . ivy-previous-line))
   :config
   (ivy-mode 1))
 
@@ -66,5 +71,3 @@
 (use-package magit
   :ensure t
   :bind (("C-x g" . magit-status))
-
-
