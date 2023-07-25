@@ -38,12 +38,7 @@
 ;;ivy usage
 (use-package ivy
   :diminish
-  :bind (:map ivy-minibuffer-map
-	      ("TAB" . ivy-alt-done)
-	      ("C-j" . ivy-next-line)
-	      ("C-k" . ivy-previous-line))
-  :config
-  (ivy-mode 1))
+  :config (ivy-mode 1))
 
 ;; doom line
 (use-package all-the-icons
@@ -52,19 +47,6 @@
   :ensure t
   :config  
   :init (doom-modeline-mode 1))
-
-
-;; Download Evil
-(unless (package-installed-p 'evil)
-  (package-install 'evil))
-
-;; Enable Evil
-(require 'evil)
-(evil-mode 1)
-
-;; add numbers of row
-(column-number-mode)
-(global-display-line-numbers-mode t)
 
 ;; magit
 
