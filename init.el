@@ -30,6 +30,8 @@
 ;; theme
 (load-theme 'sanityinc-solarized-dark)
 
+(global-display-line-numbers-mode)
+
 (use-package command-log-mode)
 
 (require 'use-package)
